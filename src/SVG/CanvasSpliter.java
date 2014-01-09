@@ -10,7 +10,7 @@ public class CanvasSpliter {
 	int WidthOfField;
 	int HeightOfField;
 	
-	public CanvasSpliter(int canvasWidth, int  canvasHeight) {
+	public CanvasSpliter( int canvasWidth, int canvasHeight ) {
 		this.canvasWidth = canvasWidth;
 		this.canvasHeight = canvasHeight;
 	}
@@ -24,7 +24,7 @@ public class CanvasSpliter {
 		this.setAmountofFields();
 		Point [][][] fields = new Point [this.amountOfFieldsX][this.amountOfFieldsY][];
 		for (int x = 0; x < this.amountOfFieldsX; x++) {
-			for (int y = 0; y < this.amountOfFieldsX; y++) {
+			for (int y = 0; y < this.amountOfFieldsY; y++) {
 				fields[x][y] = this.getField(x,y);				
 			}
 		}
@@ -32,18 +32,18 @@ public class CanvasSpliter {
 	}
 	
 	private void setAmountofFields (){
-		this.WidthOfField = this.canvasWidth /  this.amountOfFieldsX;
 		this.HeightOfField = this.canvasHeight /  this.amountOfFieldsY;
+		this.WidthOfField = this.canvasWidth /  this.amountOfFieldsX;
 	}
 	
 	private Point [] getField (int xPosition, int yPosition){
 		Point [] Field = new Point [2]; 
-		int x1 = xPosition * WidthOfField;
-		int y1 = yPosition * canvasHeight;
+		int x1 = xPosition * this.WidthOfField;
+		int y1 = yPosition * this.HeightOfField;
 		Field[0] = new Point(x1,y1);
 
-		int x2 = (xPosition + 1) * WidthOfField;
-		int y2 = (yPosition + 1) * canvasHeight;
+		int x2 = (xPosition + 1) * this.WidthOfField;
+		int y2 = (yPosition + 1) * this.HeightOfField;
 		Field[1] = new Point(x2,y2);
 		return Field;
 	}
