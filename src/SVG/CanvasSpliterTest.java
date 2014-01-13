@@ -12,7 +12,7 @@ public class CanvasSpliterTest {
 	@Test
 	public void testGetFields() {
 		this.subTestCanvasIsOneField();
-		this.subTestCanvassplitedInto2Fields();
+		this.subTestCanvasSplitedInto2Fields();
 		this.subTestCanvassplitedInto4Fields();
 	}
 
@@ -28,7 +28,7 @@ public class CanvasSpliterTest {
 	}
 	
 	/************************************************************************/
-	private void subTestCanvassplitedInto2Fields() {
+	private void subTestCanvasSplitedInto2Fields() {
 		CanvasSpliter canvasspliter = new CanvasSpliter(1000, 100);
 		canvasspliter.setAmountOfFields(1, 2);
 		Point[][][] result = canvasspliter.getFields();
