@@ -1,20 +1,27 @@
 package image;
 
 public class RGBGreyPixel extends RGBPixel {
-	private float factorRed = 1.0f / 3.0f;
-	private float factorGreen = 1.0f / 3.0f;
-	private float factorBlue = 1.0f / 3.0f;
+	private float factorRed;
+	private float factorGreen;
+	private float factorBlue;
 
 	public RGBGreyPixel(int AllColorChannels) {
 		super(AllColorChannels);
+		this.init();
 	}
 
 	public RGBGreyPixel(int red, int green, int blue, int alfa) {
 		super(red, green, blue, alfa);
+		this.init();
 	}
 
 	public RGBGreyPixel(int red, int green, int blue) {
 		super(red, green, blue);
+		this.init();
+	}
+
+	private void init() {
+		this.setGreyScaleFactorsPreset("Average");
 	}
 
 	public void setGreyScaleFactors(float factorRed, float factorGreen,
@@ -35,14 +42,14 @@ public class RGBGreyPixel extends RGBPixel {
 		case "Luminosity":
 			this.setGreyScaleFactors(0.213f, 0.7061f, 0.0809f);
 			break;
+		case "Average":
+			float OneThird = 1.0f / 3.0f;
+			this.setGreyScaleFactors(OneThird, OneThird, OneThird);
+			break;
 		}
 	}
 
 	public int grey() {
-		return this.calcGrey();
-	}
-
-	private int calcGrey() {
 		float red = this.red();
 		float green = this.green();
 		float blue = this.blue();

@@ -18,6 +18,7 @@ public class FirstTrySVGCreator extends Creator{
 		this.WidthInPixel = WidthInPixel;
 		this.HeightInPixel = HeightInPixel;
 	}
+	
 	@Override
 	public String getSVGContent (){
 		int xFields = this.fieldFactor;
