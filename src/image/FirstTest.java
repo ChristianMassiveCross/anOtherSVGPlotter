@@ -4,12 +4,9 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
 import java.util.Iterator;
-import java.util.Vector;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
-import org.omg.CORBA.PUBLIC_MEMBER;
 
 public class FirstTest {
 	PNG png = null;
@@ -28,7 +25,7 @@ public class FirstTest {
 		int[][] compareValues = this.getExpectedAverageGreyValues();
 		for (int y = 0; y < png.getHeight(); y++) {
 			int x = 0;
-			for (Iterator<Color> iterator = png.getNextLine().iterator(); iterator.hasNext();) {
+			for (Iterator<RGBGreyPixel> iterator = png.getNextLine().iterator(); iterator.hasNext();) {
 				int aGreyValue = iterator.next().grey();
 				assertEquals("proof the average grey value calculation", compareValues[x][y], aGreyValue);
 				x++;

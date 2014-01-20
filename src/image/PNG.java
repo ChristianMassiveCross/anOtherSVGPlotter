@@ -21,8 +21,8 @@ public class PNG {
 		this.setWidth(this.getImageObject().getWidth());
 	}
 
-	public Vector<Color> getNextLine() {
-		Vector<Color> line = new Vector<Color>();
+	public Vector<RGBGreyPixel> getNextLine() {
+		Vector<RGBGreyPixel> line = new Vector<RGBGreyPixel>();
 		for (int x = 0; x < this.getWidth(); x++) {
 			line.add(this.getPixel(x, this.getCurrentLine()));
 		}
@@ -30,9 +30,9 @@ public class PNG {
 		return line;
 	}
 
-	public Color getPixel(int x, int y) {
+	public RGBGreyPixel getPixel(int x, int y) {
 		int AllChannels = this.getImageObject().getRGB(x, y);
-		Color color = new Color(AllChannels);
+		RGBGreyPixel color = new RGBGreyPixel(AllChannels);
 		return color;
 	}
 
@@ -53,7 +53,7 @@ public class PNG {
 	}
 
 	public int getPixelInGrey(int x, int y) {
-		Color color = this.getPixel(x, y);
+		RGBGreyPixel color = this.getPixel(x, y);
 		color.setGreyScaleFactorsPreset(this.getSchemaName());
 		return color.grey();
 	}
