@@ -2,14 +2,22 @@ package OpenSourceArt;
 
 import image.PNG;
 
-import java.awt.Point;
 import java.io.IOException;
 import java.util.Vector;
 
+import SVG.Creator;
+import SVG.Writer;
+
 public class PixelToLine {
 	private PNG png;
-	private Vector<Point>[] allLinesAsPoints;
+	private Vector<String> svgElements;
 	private ImageProcessor imageProcessor;
+
+	public static void main(String[] args) {
+		ImageProcessor iP = new ImageProcessor001();
+		PixelToLine ptl = new PixelToLine(iP);
+		ptl.go("foto.png");
+	}
 
 	public PixelToLine(ImageProcessor imageProcessor) {
 		this.setImageProcessor(imageProcessor);
@@ -30,19 +38,22 @@ public class PixelToLine {
 	}
 
 	private void process() {
-		setAllLinesAsPoints(this.getImageProcessor().process(this.getPng()));
+		storeSVGElments(this.getImageProcessor().process(this.getPng()));
 	}
 
 	private void writeSVG() {
-		this.getAllLinesAsPoints();
+		Creator svg = new Creator(this.png.getWidth()*100,this.png.getHeight()*100);
+		svg.setSvgElements(this.getSvgElements());
+		Writer svgWriter = new Writer("test.svg");
+		svgWriter.write(svg.getSVGAsString());
 	}
 
-	private Vector<Point>[] getAllLinesAsPoints() {
-		return allLinesAsPoints;
+	private Vector<String> getSvgElements() {
+		return svgElements;
 	}
 
-	private void setAllLinesAsPoints(Vector<Point>[] allLinesAsPoints) {
-		this.allLinesAsPoints = allLinesAsPoints;
+	private void storeSVGElments(Vector<String> svgElements) {
+		this.svgElements = svgElements;
 	}
 
 	private PNG getPng() {

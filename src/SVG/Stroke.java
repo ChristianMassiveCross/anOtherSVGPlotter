@@ -3,10 +3,10 @@ package SVG;
 import java.awt.Point;
 
 public class Stroke implements GraficElement{
-	BaseAttributes attributes;
+	StyleAttributes attributes;
 	Point startPoint = new Point();
 	Point endPoint;
-	public Stroke(BaseAttributes attributes) {
+	public Stroke(StyleAttributes attributes) {
 		this.attributes = attributes;
 	}
 
@@ -48,6 +48,12 @@ public class Stroke implements GraficElement{
 
 	public void setEndPoint(Point endPoint) {
 		this.endPoint = endPoint;
+	}
+
+	@Override
+	public String getAsString(Point Position, Point Size) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

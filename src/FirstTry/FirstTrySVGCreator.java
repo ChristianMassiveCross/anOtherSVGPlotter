@@ -3,12 +3,12 @@ import java.awt.Point;
 
 import SVG.CanvasSpliter;
 import SVG.Creator;
-import SVG.BaseAttributes;
+import SVG.StyleAttributes;
 import SVG.Stroke;
 public class FirstTrySVGCreator extends Creator{
 	int WidthInPixel;
 	int HeightInPixel;
-	BaseAttributes attributes = null;
+	StyleAttributes attributes = null;
 	int PositionShift = 0;
 	private int fieldFactor = 4;
 	boolean GoUp = true;
@@ -76,7 +76,7 @@ public class FirstTrySVGCreator extends Creator{
 	}
 	
 	private void setBaseAttributes (){
-		this.attributes = new BaseAttributes();
+		this.attributes = new StyleAttributes();
 		this.attributes.setStrokeWidth("0.5");
 	}
 }

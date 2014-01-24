@@ -1,7 +1,12 @@
 package SVG;
+
+import java.util.Iterator;
+import java.util.Vector;
+
 public class Creator {
 	int WidthInPixel;
 	int HeightInPixel;
+	private Vector<String> svgElements;
 	
 	public Creator() {
 		this.WidthInPixel = 100;
@@ -42,11 +47,24 @@ public class Creator {
 	}
 
 	public String getSVGContent() {
-		return "bla";
+		Vector<String> elements = this.getSvgElements();
+		String concatString = "";
+		for (Iterator<String> iterator = elements.iterator(); iterator.hasNext();) {
+			concatString = concatString.concat((String) iterator.next());
+		}
+		return concatString;
 	}
 	
 	private String getSVGFooter() {
 		return "</svg>";
+	}
+
+	public Vector<String> getSvgElements() {
+		return svgElements;
+	}
+
+	public void setSvgElements(Vector<String> svgElements) {
+		this.svgElements = svgElements;
 	}
 
 }
