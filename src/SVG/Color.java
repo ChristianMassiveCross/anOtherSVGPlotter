@@ -1,18 +1,18 @@
 package SVG;
 
-public class Colors {
+public class Color {
 	// final static
 	final static String TRANSPARENT = "none";
 	final static String BLACK = "#000000";
 	final static String WHITE = "#FFFFFF";
 	private String colorString;
-	public Colors() {
+	public Color() {
 		this.setColorString(TRANSPARENT);
 	}
-	public Colors(int grey) {
+	public Color(int grey) {
 		this.setColorString("rgb(" + grey + "," + grey + "," + grey + ")");
 	}
-	public Colors(int red, int blue, int green) {
+	public Color(int red, int blue, int green) {
 		this.setColorString("rgb(" + red + "," + blue + "," + green + ")");
 	}
 	

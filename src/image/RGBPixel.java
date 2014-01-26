@@ -1,15 +1,18 @@
 package image;
 
-public class RGBPixel {
+import SVG.Color;
+
+public class RGBPixel implements Pixel {
 	private int red;
 	private int green;
 	private int blue;
 	private int alfa;
+	private Color color;
 
 	public RGBPixel(int AllColorChannels) {
 		this.initColor(
 
-				this.shiftNumberInByte(AllColorChannels, 2), // red
+		this.shiftNumberInByte(AllColorChannels, 2), // red
 				this.shiftNumberInByte(AllColorChannels, 1), // green
 				this.shiftNumberInByte(AllColorChannels, 0), // blue
 				this.shiftNumberInByte(AllColorChannels, 3) // alfa
@@ -31,6 +34,7 @@ public class RGBPixel {
 		this.setGreen(green);
 		this.setBlue(blue);
 		this.setAlfa(alfa);
+		this.setColor(new Color(red,green,blue));
 	}
 
 	private int shiftNumberInByte(int number, int ByteToShift) {
@@ -62,8 +66,8 @@ public class RGBPixel {
 	}
 
 	private void setBlue(int blue) {
-		this.blue = blue;
-	}
+		this.blue = blue;	
+		}
 
 	public int alfa() {
 		return alfa;
@@ -73,4 +77,11 @@ public class RGBPixel {
 		this.alfa = alfa;
 	}
 
+	public Color getColor() {
+		return color;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
+	}
 }

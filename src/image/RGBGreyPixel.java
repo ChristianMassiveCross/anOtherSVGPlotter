@@ -1,9 +1,12 @@
 package image;
 
+import SVG.Color;
+
 public class RGBGreyPixel extends RGBPixel {
 	private float factorRed;
 	private float factorGreen;
 	private float factorBlue;
+
 
 	public RGBGreyPixel(int AllColorChannels) {
 		super(AllColorChannels);
@@ -89,4 +92,6 @@ public class RGBGreyPixel extends RGBPixel {
 	private void setFactorBlue(float factorBlue) {
 		this.factorBlue = factorBlue;
 	}
+
+
 }

@@ -41,7 +41,7 @@ public class StyleAttributes {
 		this.fillColor = fillColor;
 	}
 
-	public void setFillColor(Colors color) {
+	public void setFillColor(Color color) {
 		this.fillColor = color.getColorString();
 	}
 
@@ -54,7 +54,7 @@ public class StyleAttributes {
 		this.stokeColor = stokeColor;
 	}
 
-	public void setStokeColor(Colors color) {
+	public void setStokeColor(Color color) {
 		this.stokeColor = color.getColorString();
 	}
 

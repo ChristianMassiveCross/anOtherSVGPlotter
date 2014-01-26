@@ -38,7 +38,7 @@ public class PixelToLine {
 	}
 
 	private void process() {
-		storeSVGElments(this.getImageProcessor().process(this.getPng()));
+		setSVGElments(this.getImageProcessor().process(this.getPng()));
 	}
 
 	private void writeSVG() {
@@ -52,7 +52,7 @@ public class PixelToLine {
 		return svgElements;
 	}
 
-	private void storeSVGElments(Vector<String> svgElements) {
+	private void setSVGElments(Vector<String> svgElements) {
 		this.svgElements = svgElements;
 	}
 

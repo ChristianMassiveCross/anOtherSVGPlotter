@@ -50,10 +50,5 @@ public class Stroke implements GraficElement{
 		this.endPoint = endPoint;
 	}
 
-	@Override
-	public String getAsString(Point Position, Point Size) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

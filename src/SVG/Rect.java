@@ -52,11 +52,11 @@ public class Rect implements GraficElement {
 		return this.style.getAsString();
 	}
 
-	public void setStyle(Colors Fillcolors) {
+	public void setStyle(Color Fillcolors) {
 		this.setStyle(Fillcolors, Fillcolors);
 	}
 
-	public void setStyle(Colors Fillcolors, Colors StrokeColor) {
+	public void setStyle(Color Fillcolors, Color StrokeColor) {
 		StyleAttributes style = new StyleAttributes();
 		style.setFillColor(Fillcolors);
 		style.setStokeColor(StrokeColor);

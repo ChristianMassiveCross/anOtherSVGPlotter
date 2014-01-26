@@ -1,13 +1,13 @@
 package OpenSourceArt;
 
 import image.PNG;
+import image.Pixel;
 import image.RGBGreyPixel;
 
 import java.awt.Point;
 import java.util.Iterator;
 import java.util.Vector;
 
-import SVG.Colors;
 import SVG.Rect;
 
 public class ImageProcessor001 implements ImageProcessor {
@@ -29,23 +29,23 @@ public class ImageProcessor001 implements ImageProcessor {
 		Vector<String> outPutMatrix = new Vector<String>();
 		for (int y = 0; y < png.getHeight(); y++) {
 			int x = 0;
-			for (Iterator<RGBGreyPixel> iterator = png.getNextLine().iterator(); iterator
-					.hasNext();) {
-				RGBGreyPixel i = iterator.next();
+			for (Iterator<RGBGreyPixel> pixelIterator = png.getNextLine()
+					.iterator(); pixelIterator.hasNext();) {// TODO get next
+															// line == get next
+															// pixel
+				Pixel i = pixelIterator.next();
 				outPutMatrix.add(
-						this.createSVGElement(i.red(),i.green(),i.blue(),
-						new Point(x, y))
-				);
+						this.createSVGElement(new Point(x, y), i.getColor() ) );
 				x++;
 			}
 		}
 		return outPutMatrix;
 	}
 
-	private String createSVGElement(int r, int g, int b, Point position) {
-		Rect rect = new Rect(position,new Point(this.getTileWidth(),this.getTileHeight()));
-		Colors colors = new Colors(r,g,b);
-		rect.setStyle(colors);
+	private String createSVGElement(Point position, SVG.Color color) {
+		Point tileSize = new Point(this.getTileWidth(), this.getTileHeight());
+		Rect rect = new Rect(position, tileSize);
+		rect.setStyle(color);
 		return rect.getAsString();
 	}
 
