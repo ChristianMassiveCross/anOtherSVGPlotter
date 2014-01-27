@@ -8,7 +8,7 @@ import java.awt.Point;
 import java.util.Iterator;
 import java.util.Vector;
 
-import SVG.Rect;
+import SVG.elements.Rect;
 
 public class ImageProcessor001 implements ImageProcessor {
 	private int tileWidth = 100;
@@ -42,7 +42,7 @@ public class ImageProcessor001 implements ImageProcessor {
 		return outPutMatrix;
 	}
 
-	private String createSVGElement(Point position, SVG.Color color) {
+	private String createSVGElement(Point position, svg.elements.attributes.Color color) {
 		Point tileSize = new Point(this.getTileWidth(), this.getTileHeight());
 		Rect rect = new Rect(position, tileSize);
 		rect.setStyle(color);

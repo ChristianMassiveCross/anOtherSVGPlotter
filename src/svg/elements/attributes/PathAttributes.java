@@ -1,4 +1,4 @@
-package SVG;
+package svg.elements.attributes;
 
 import java.awt.Point;
 

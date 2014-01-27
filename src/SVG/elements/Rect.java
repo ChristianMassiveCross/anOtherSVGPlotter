@@ -1,6 +1,11 @@
-package SVG;
+package SVG.elements;
 
 import java.awt.Point;
+
+import svg.elements.attributes.Color;
+import svg.elements.attributes.StyleAttributes;
+
+import SVG.KeyValuePixel;
 
 public class Rect implements GraficElement {
 	private StyleAttributes style;

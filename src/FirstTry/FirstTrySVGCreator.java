@@ -1,10 +1,11 @@
 package FirstTry;
 import java.awt.Point;
 
+import svg.elements.attributes.StyleAttributes;
+
 import SVG.CanvasSpliter;
 import SVG.Creator;
-import SVG.StyleAttributes;
-import SVG.Stroke;
+import SVG.elements.Stroke;
 public class FirstTrySVGCreator extends Creator{
 	int WidthInPixel;
 	int HeightInPixel;

@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' version='1.1' baseProfile='full' width='300px' height='300px' >
 
-<rect x='0px' y='0px' width='100px' height='100px' style='fill:rgb(255,255,255); stroke:rgb(255,255,255); '  />
+<rect x='10.56px' y='0px' width='100px' height='100px' style='fill:rgb(255,255,255); stroke:rgb(255,255,255); '  />
 <rect x='100px' y='0px' width='100px' height='100px' style='fill:rgb(0,0,0); stroke:rgb(0,0,0); '  />
 <rect x='200px' y='0px' width='100px' height='100px' style='fill:rgb(50,50,50); stroke:rgb(50,50,50); '  />
 <rect x='0px' y='100px' width='100px' height='100px' style='fill:rgb(100,100,100); stroke:rgb(100,100,100); '  />
 <rect x='100px' y='100px' width='100px' height='100px' style='fill:rgb(200,200,200); stroke:rgb(200,200,200); '  />
 <rect x='200px' y='100px' width='100px' height='100px' style='fill:rgb(255,255,255); stroke:rgb(255,255,255); '  />
-<rect x='0px' y='200px' width='100px' height='100px' style='fill:rgb(255,0,0); stroke:rgb(255,0,0); '  />
-<rect x='100px' y='200px' width='100px' height='100px' style='fill:rgb(0,255,0); stroke:rgb(0,255,0); '  />
-<rect x='200px' y='200px' width='100px' height='100px' style='fill:rgb(0,0,255); stroke:rgb(0,0,255); '  />
+<rect x='0px' y='200px' width='100px' height='100px' style='fill:rgb(255,255,255); stroke:rgb(255,255,255); '  />
+<rect x='100px' y='200px' width='100px' height='100px' style='fill:rgb(0,0,0); stroke:rgb(0,0,0); '  />
+<rect x='200px' y='200px' width='100px' height='100px' style='fill:rgb(0,0,0); stroke:rgb(0,0,0); '  />
 
 </svg>

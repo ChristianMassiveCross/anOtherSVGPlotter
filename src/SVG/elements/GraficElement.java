@@ -1,6 +1,5 @@
-package SVG;
+package SVG.elements;
 
-import java.awt.Point;
 
 public interface GraficElement {
 	public String getAsString();

@@ -1,6 +1,9 @@
-package SVG;
+package SVG.elements;
 
 import java.awt.Point;
+
+import svg.elements.attributes.StyleAttributes;
+
 
 public class Stroke implements GraficElement{
 	StyleAttributes attributes;

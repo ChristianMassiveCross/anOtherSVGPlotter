@@ -1,6 +1,6 @@
 package image;
 
-import SVG.Color;
+import svg.elements.attributes.Color;
 
 public interface Pixel {
 
