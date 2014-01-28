@@ -4,24 +4,24 @@ import svg.elements.attributes.PathAttributes;
 import svg.elements.attributes.StyleAttributes;
 
 public class Path implements GraficElement {
-	private String pathAtributes = "";
+	private String pathAttributes = "";
 	private String style = "";
 
 	@Override
 	public String getAsString() {
 		String pattern = "<path d='%s' style='%s'/>";
-		String path = this.getPathAtributes();
+		String path = this.getPathAttributes();
 		String style = this.getStyle();
 		String pathAsString = String.format(pattern, path, style);
 		return pathAsString;
 	}
 
-	private String getPathAtributes() {
-		return pathAtributes;
+	private String getPathAttributes() {
+		return pathAttributes;
 	}
 
 	public void setPathAtributes(PathAttributes pathAtributes) {
-		this.pathAtributes = pathAtributes.toString();
+		this.pathAttributes = pathAtributes.toString();
 	}
 
 	private String getStyle() {

@@ -1,7 +1,7 @@
 package FirstTry;
 import java.awt.Point;
 
-import svg.elements.Stroke;
+import svg.elements.Line;
 import svg.elements.attributes.StyleAttributes;
 
 import SVG.CanvasSpliter;
@@ -40,7 +40,7 @@ public class FirstTrySVGCreator extends Creator{
 	}
 	
 	private String GetOneFieldAsString(Point [][][] CanvasFields, Point Position) {
-		Stroke stroke = new Stroke(this.attributes);
+		Line stroke = new Line(this.attributes);
 		Point startPostion = changePosition(CanvasFields[Position.x][Position.y][0]);
 		stroke.setStartPoint( startPostion );
 		Point endPosition = changePosition(CanvasFields[Position.x][Position.y][1]);
