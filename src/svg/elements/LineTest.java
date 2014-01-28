@@ -30,5 +30,11 @@ public class LineTest {
 					 line.getAsString()
 		);
 	}
-	
+	@Test
+	public void LineWithoutParameters() {
+		Line line = new Line();
+		line.getAsString();
+		assertEquals("<line  style=''/>", line.getAsString() );
+	}
+
 }

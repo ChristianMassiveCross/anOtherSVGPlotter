@@ -21,7 +21,13 @@ public class Line implements GraficElement{
 	}
 	
 	private String getPosition() {
-		return position;
+		String returnValue;
+		if ( this.position == null){
+			returnValue = "";
+		}else{
+			returnValue = this.position;
+		}
+		return returnValue;
 	}
 
 	public void setPosition(LineAttributes lineAtributes) {
@@ -29,7 +35,13 @@ public class Line implements GraficElement{
 	}
 
 	private String getStyle() {
-		return style;
+		String returnValue;
+		if ( this.style == null){
+			returnValue = "";
+		}else{
+			returnValue = this.style;
+		}
+		return returnValue;
 	}
 
 	public void setStyle(StyleAttributes styleAttributes) {
