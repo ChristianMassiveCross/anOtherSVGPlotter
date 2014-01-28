@@ -8,7 +8,8 @@ import java.awt.Point;
 import java.util.Iterator;
 import java.util.Vector;
 
-import SVG.elements.Rect;
+import svg.elements.Rect;
+
 
 public class ImageProcessor001 implements ImageProcessor {
 	private int tileWidth = 100;
