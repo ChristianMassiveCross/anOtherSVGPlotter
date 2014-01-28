@@ -2,8 +2,8 @@ package SVG.elements;
 
 import java.awt.Point;
 
-import svg.elements.attributes.Color;
 import svg.elements.attributes.StyleAttributes;
+import svg.elements.attributes.properties.Color;
 
 import SVG.KeyValuePixel;
 

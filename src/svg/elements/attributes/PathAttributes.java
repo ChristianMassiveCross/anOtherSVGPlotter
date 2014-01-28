@@ -1,19 +1,8 @@
 package svg.elements.attributes;
 
 import java.awt.Point;
-import java.util.Iterator;
-import java.util.Vector;
 
-public class PathAttributes {
-	private Vector<String> collectedPath;
-
-	public PathAttributes() {
-		this.setCollectedPath(new Vector<String>());
-	}
-
-	private void addToPath(String part) {
-		this.getCollectedPath().add(part);
-	}
+public class PathAttributes extends AttributeCollector{
 
 	public void moveTo(Point position) {
 		String pattern = "M %d %d ";
@@ -22,7 +11,7 @@ public class PathAttributes {
 					position.x,
 					position.y
 		);
-		this.addToPath(formatedString);
+		this.addToCollector(formatedString);
 	}
 
 	public void lineTo(Point position) {
@@ -32,7 +21,7 @@ public class PathAttributes {
 					position.x,
 					position.y
 		);
-		this.addToPath(formatedString);
+		this.addToCollector(formatedString);
 	}
 
 	public void curveTo(Point firstHandle, Point secondHandle, Point position) {
@@ -43,7 +32,7 @@ public class PathAttributes {
 					secondHandle.x, secondHandle.y,
 					position.x, position.y
 		);
-		this.addToPath(bezierCurve);
+		this.addToCollector(bezierCurve);
 	}
 
 	public void smoothCurveTo(Point handle, Point position) {
@@ -53,29 +42,11 @@ public class PathAttributes {
 					handle.x, handle.y,
 					position.x, position.y
 		);
-		this.addToPath(smoothBezierCurve);
+		this.addToCollector(smoothBezierCurve);
 	}
 
 	public void closePath() {
-		this.addToPath("Z ");
-	}
-
-	@Override
-	public String toString() {
-		String path = "";
-		for (Iterator<String> it = this.getCollectedPath().iterator(); it
-				.hasNext();) {
-			path = path.concat(it.next());
-		}
-		return path;
-	}
-
-	private Vector<String> getCollectedPath() {
-		return collectedPath;
-	}
-
-	private void setCollectedPath(Vector<String> collectedPath) {
-		this.collectedPath = collectedPath;
+		this.addToCollector("Z ");
 	}
 
 }

@@ -1,4 +1,4 @@
-package svg.elements.attributes;
+package svg.elements.attributes.properties;
 
 public class Unit {
 	private String unitAbbreviation = "px";

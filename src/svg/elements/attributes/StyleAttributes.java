@@ -1,24 +1,31 @@
 package svg.elements.attributes;
 
-public class StyleAttributes {
+import svg.elements.attributes.properties.Color;
+import svg.elements.attributes.properties.Unit;
 
-	// stroke-linejoin
-
-	public String fill(Color color) {
-		return String.format("fill:%s; ", color.toString());
+public class StyleAttributes extends AttributeCollector{
+	
+	public void fill(Color color) {
+		String pattern = "fill:%s; ";
+		String formatedString = String.format(pattern, color.toString());
+		this.addToCollector(formatedString);
 	}
 
-	public String stroke(Color color) {
-		return String.format("stroke:%s; ", color.toString());
+	public void stroke(Color color) {
+		String pattern = "stroke:%s; ";
+		String formatedString = String.format(pattern, color.toString());
+		this.addToCollector(formatedString);
 	}
 
-	public String strokeWidth(float width) {
+	public void strokeWidth(float width) {
 		Unit unit = new Unit();
-		return this.strokeWidth(width, unit);
+		this.strokeWidth(width, unit);
 	}
 
-	public String strokeWidth(float width, Unit unit) {
-		return String.format("stroke-width:%s; ", unit.getWithUnit(width));
+	public void strokeWidth(float width, Unit unit) {
+		String pattern = "stroke-width:%s; ";
+		String formatedString = String.format(pattern, unit.getWithUnit(width));
+		this.addToCollector(formatedString);
 	}
 
 	private String opacityToString(int opacityInProcent) {
@@ -26,61 +33,18 @@ public class StyleAttributes {
 		return opacity.toString();
 	}
 
-	public String strokeOpacity(int opacityInProcent) {
+	public void strokeOpacity(int opacityInProcent) {
+		String pattern = "stroke-opacity:%s; ";
 		String opacityAsString = this.opacityToString(opacityInProcent);
-		return String.format("stroke-opacity:%s; ", opacityAsString);
+		String formatedString = String.format(pattern, opacityAsString);
+		this.addToCollector(formatedString);
 	}
 
-	public String fillOpacity(int opacityInProcent) {
+	public void fillOpacity(int opacityInProcent) {
+		String pattern = "fill-opacity:%s; ";
 		String opacityAsString = this.opacityToString(opacityInProcent);
-		return String.format("fill-opacity:%s; ", opacityAsString);
-	}
-
-	public String strokeLinecap() {
-		return this.strokeLinecap("butt");
-	}
-
-	public String strokeLinecap(String type) {
-		String lineCap = "";
-		switch (type) {
-		case "round":
-		case "middle":
-			lineCap = "round";
-			break;
-		case "long":
-		case "square":
-			lineCap = "square";
-			break;
-		case "butt":
-		case "short":
-		default:
-			lineCap = "butt";
-			break;
-		}
-		return String.format("stroke-linecap:%s; ", lineCap);
-	}
-
-	public String strokeLinejoin() {
-		return this.strokeLinejoin("miter");
-	}
-
-	public String strokeLinejoin(String type) {
-		String lineJoin = "";
-		switch (type) {
-		case "round":
-			lineJoin = "round";
-			break;
-		case "flat":
-		case "bevel":
-			lineJoin = "bevel";
-			break;
-		case "spiky":
-		case "miter":
-		default:
-			lineJoin = "miter";
-			break;
-		}
-		return String.format("stroke-linejoin:%s; ", lineJoin);
+		String formatedString = String.format(pattern, opacityAsString);
+		this.addToCollector(formatedString);
 	}
 
 }

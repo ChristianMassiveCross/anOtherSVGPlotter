@@ -42,7 +42,7 @@ public class ImageProcessor001 implements ImageProcessor {
 		return outPutMatrix;
 	}
 
-	private String createSVGElement(Point position, svg.elements.attributes.Color color) {
+	private String createSVGElement(Point position, svg.elements.attributes.properties.Color color) {
 		Point tileSize = new Point(this.getTileWidth(), this.getTileHeight());
 		Rect rect = new Rect(position, tileSize);
 		rect.setStyle(color);
