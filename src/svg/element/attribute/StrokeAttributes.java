@@ -1,4 +1,4 @@
-package svg.elements.attributes;
+package svg.element.attribute;
 
 public class StrokeAttributes extends AttributeCollector {
 	

@@ -1,11 +1,11 @@
-package svg.elements.attributes;
+package svg.element.attribute;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import svg.elements.attributes.properties.Color;
-import svg.elements.attributes.properties.Unit;
+import svg.element.attribute.property.Color;
+import svg.element.attribute.property.Unit;
 
 public class StyleAttributesTest {
 
@@ -35,8 +35,7 @@ public class StyleAttributesTest {
 	@Test
 	public void strokeWidthAndChangedUnit() {
 		StyleAttributes styleAttributes = new StyleAttributes();
-		Unit unit = new Unit();
-		unit.setUnitAbbreviation("xXx");
+		Unit unit = new Unit("xXx");
 		styleAttributes.strokeWidth(3.7f, unit);
 		assertEquals("stroke-width:3.7xXx; ", styleAttributes.toString());
 	}

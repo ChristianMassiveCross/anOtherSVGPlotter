@@ -1,4 +1,4 @@
-package svg.elements;
+package svg.element;
 
 import static org.junit.Assert.*;
 
@@ -6,9 +6,9 @@ import java.awt.Point;
 
 import org.junit.Test;
 
-import svg.elements.attributes.PathAttributes;
-import svg.elements.attributes.StyleAttributes;
-import svg.elements.attributes.properties.Color;
+import svg.element.attribute.PathAttributes;
+import svg.element.attribute.StyleAttributes;
+import svg.element.attribute.property.Color;
 
 public class PathTest {
 

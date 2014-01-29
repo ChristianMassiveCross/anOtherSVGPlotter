@@ -1,7 +1,7 @@
-package svg.elements.attributes;
+package svg.element.attribute;
 
-import svg.elements.attributes.properties.Color;
-import svg.elements.attributes.properties.Unit;
+import svg.element.attribute.property.Color;
+import svg.element.attribute.property.Unit;
 
 public class StyleAttributes extends AttributeCollector{
 	

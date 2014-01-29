@@ -1,4 +1,4 @@
-package svg.elements;
+package svg.element;
 
 
 public interface GraficElement {

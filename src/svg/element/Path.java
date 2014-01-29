@@ -1,7 +1,7 @@
-package svg.elements;
+package svg.element;
 
-import svg.elements.attributes.PathAttributes;
-import svg.elements.attributes.StyleAttributes;
+import svg.element.attribute.PathAttributes;
+import svg.element.attribute.StyleAttributes;
 
 public class Path implements GraficElement {
 	private String pathAttributes = "";

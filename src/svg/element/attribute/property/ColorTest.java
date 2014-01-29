@@ -1,4 +1,4 @@
-package svg.elements.attributes.properties;
+package svg.element.attribute.property;
 
 import static org.junit.Assert.*;
 

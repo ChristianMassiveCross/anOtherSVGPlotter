@@ -1,9 +1,9 @@
-package svg.elements;
+package svg.element;
 
 import java.awt.Point;
 
-import svg.elements.attributes.StyleAttributes;
-import svg.elements.attributes.properties.Color;
+import svg.element.attribute.StyleAttributes;
+import svg.element.attribute.property.Color;
 
 import SVG.KeyValuePixel;
 
@@ -15,16 +15,15 @@ public class Rect implements GraficElement {
 		this.position = position;
 		this.size = size;
 	}
+
 	@Override
 	public String getAsString() {
-		String outPut = "<rect ";
-		outPut = outPut.concat(this.createPosition(position));
-		outPut = outPut.concat(this.createSize(size));
-		outPut = outPut.concat(this.getStyle());
-		outPut = outPut.concat(" />");
-		return outPut;
+		String pattern = "<rect d='%s' style='%s'/>";
+		String path = this.getPathAttributes();
+		String style = this.getStyle();
+		String pathAsString = String.format(pattern, path, style);
+		return pathAsString;
 	}
-
 	private String createSize(Point size) {
 		String xSize = this.int2String(this.size.x);
 		KeyValuePixel xSizeValue = new KeyValuePixel("width", xSize);

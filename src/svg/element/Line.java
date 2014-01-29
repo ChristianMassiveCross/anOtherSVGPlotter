@@ -1,9 +1,9 @@
-package svg.elements;
+package svg.element;
 
 import java.awt.Point;
 
-import svg.elements.attributes.LineAttributes;
-import svg.elements.attributes.StyleAttributes;
+import svg.element.attribute.LineAttributes;
+import svg.element.attribute.StyleAttributes;
 
 public class Line implements GraficElement{
 	Point startPoint = new Point();

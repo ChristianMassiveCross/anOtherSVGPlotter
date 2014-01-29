@@ -1,8 +1,8 @@
 package FirstTry;
 import java.awt.Point;
 
-import svg.elements.Line;
-import svg.elements.attributes.StyleAttributes;
+import svg.element.Line;
+import svg.element.attribute.StyleAttributes;
 
 import SVG.CanvasSpliter;
 import SVG.Creator;

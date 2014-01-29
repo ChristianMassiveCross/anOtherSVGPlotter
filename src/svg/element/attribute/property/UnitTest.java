@@ -1,4 +1,4 @@
-package svg.elements.attributes.properties;
+package svg.element.attribute.property;
 
 import static org.junit.Assert.*;
 
@@ -8,8 +8,7 @@ public class UnitTest {
 
 	@Test
 	public void call_GetWithUnit_WithIntAndChangeUnit() {
-		Unit unit = new Unit();
-		unit.setUnitAbbreviation("pt");
+		Unit unit = new Unit("pt");
 		String result = unit.getWithUnit(1);
 		assertEquals("1pt", result);
 	}
