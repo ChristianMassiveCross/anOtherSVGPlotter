@@ -21,8 +21,8 @@ public class PNG {
 		this.setWidth(this.getImageObject().getWidth());
 	}
 
-	public Vector<RGBGreyPixel> getNextLine() {
-		Vector<RGBGreyPixel> line = new Vector<RGBGreyPixel>();
+	public Vector<Pixel> getNextLine() {
+		Vector<Pixel> line = new Vector<Pixel>();
 		for (int x = 0; x < this.getWidth(); x++) {
 			line.add(this.getPixel(x, this.getCurrentLine()));
 		}
@@ -30,12 +30,19 @@ public class PNG {
 		return line;
 	}
 
-	public RGBGreyPixel getPixel(int x, int y) {
+	public Pixel getPixel(int x, int y) {
 		int AllChannels = this.getImageObject().getRGB(x, y);
-		RGBGreyPixel color = new RGBGreyPixel(AllChannels);
+		Pixel color = new RGBPixel(AllChannels);
 		return color;
 	}
 
+	public Pixel getPixelInGrey(int x, int y) {
+		int AllChannels = this.getImageObject().getRGB(x, y);
+		RGBGreyPixel grey = new RGBGreyPixel(AllChannels);
+		grey.setGreyScaleFactorsPreset(this.getSchemaName());
+		return grey;
+	}
+	
 	public int getPixelInAlfa(int x, int y) {
 		return this.getPixel(x, y).alfa();
 	}
@@ -50,12 +57,6 @@ public class PNG {
 
 	public int getPixelInBlue(int x, int y) {
 		return this.getPixel(x, y).blue();
-	}
-
-	public int getPixelInGrey(int x, int y) {
-		RGBGreyPixel color = this.getPixel(x, y);
-		color.setGreyScaleFactorsPreset(this.getSchemaName());
-		return color.grey();
 	}
 
 	public void setGreyScaleFactorsPreset(String SchemaName) {

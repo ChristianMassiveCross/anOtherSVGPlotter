@@ -3,12 +3,17 @@ package OpenSourceArt;
 import image.PNG;
 import image.Pixel;
 import image.RGBGreyPixel;
+import image.RGBPixel;
 
 import java.awt.Point;
 import java.util.Iterator;
 import java.util.Vector;
 
 import svg.element.Rect;
+import svg.element.attribute.AreaAttribute;
+import svg.element.attribute.PositionAttribute;
+import svg.element.attribute.StyleAttribute;
+import svg.element.attribute.property.Color;
 
 
 public class ImageProcessor001 implements ImageProcessor {
@@ -30,26 +35,38 @@ public class ImageProcessor001 implements ImageProcessor {
 		Vector<String> outPutMatrix = new Vector<String>();
 		for (int y = 0; y < png.getHeight(); y++) {
 			int x = 0;
-			for (Iterator<RGBGreyPixel> pixelIterator = png.getNextLine()
+			for (Iterator<Pixel> pixelIterator = png.getNextLine()
 					.iterator(); pixelIterator.hasNext();) {// TODO get next
 															// line == get next
 															// pixel
 				Pixel i = pixelIterator.next();
 				outPutMatrix.add(
-						this.createSVGElement(new Point(x, y), i.getColor() ) );
+						this.createSVGElement(new Point(x*100, y*100), this.pixelToColor(i) ) );
 				x++;
 			}
 		}
 		return outPutMatrix;
 	}
-
-	private String createSVGElement(Point position, svg.element.attribute.property.Color color) {
-		Point tileSize = new Point(this.getTileWidth(), this.getTileHeight());
-		Rect rect = new Rect(position, tileSize);
-		rect.setStyle(color);
+	private String createSVGElement(Point pos, Color color) {
+		PositionAttribute position = new PositionAttribute();
+		position.setPosition(pos);
+		AreaAttribute area = new AreaAttribute();
+		area.setArea(this.getTileWidth(), this.getTileHeight());
+		StyleAttribute style = new StyleAttribute();
+		style.fill(color);
+		style.stroke(color);
+		Rect rect = new Rect(position, area, style);
 		return rect.getAsString();
 	}
-
+	
+	private Color pixelToColor (Pixel pixel) {
+		Color color = new Color(
+				pixel.red(),
+				pixel.green(),
+				pixel.blue()
+		);
+		return color;
+	}
 	/*----------------------------------------------------------------------------------*/
 	private int getTileWidth() {
 		return tileWidth;

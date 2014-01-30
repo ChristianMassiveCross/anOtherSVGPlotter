@@ -1,6 +1,5 @@
 package image;
 
-import svg.element.attribute.property.Color;
 
 public class RGBGreyPixel extends RGBPixel {
 	private float factorRed;

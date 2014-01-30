@@ -1,5 +1,6 @@
 package svg.element.attribute.property;
 
+
 public class Color {
 	// final static
 	final static String TRANSPARENT = "none";
@@ -16,7 +17,7 @@ public class Color {
 	public Color(int red, int blue, int green) {
 		this.setColorStringRGB(red, blue, green);
 	}
-
+	
 	@Override
 	public String toString() {
 		return this.colorString;
