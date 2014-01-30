@@ -9,7 +9,7 @@ public class Path implements GraficElement {
 
 	@Override
 	public String getAsString() {
-		String pattern = "<path d='%s' style='%s'/>";
+		String pattern = "<path d='%s' %s/>";
 		String path = this.getPathAttributes();
 		String style = this.getStyle();
 		String pathAsString = String.format(pattern, path, style);

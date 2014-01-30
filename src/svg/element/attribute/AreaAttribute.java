@@ -18,7 +18,7 @@ public class AreaAttribute extends AttributeCollector {
 	}
 	
 	public void setArea(int width, int height, Unit unit) {
-		String pattern = "width='%s' height='%s' ";
+		String pattern = "width='%s' height='%s'";
 		String formatedString = String.format(
 				pattern,
 				unit.getWithUnit(width),

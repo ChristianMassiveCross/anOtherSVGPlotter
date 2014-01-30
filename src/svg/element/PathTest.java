@@ -16,7 +16,7 @@ public class PathTest {
 	public void pathWithoutAnySettings() {
 		Path path = new Path();
 		String result = path.getAsString();
-		assertEquals("<path d='' style=''/>", result);
+		assertEquals("<path d='' />", result);
 	}
 
 	@Test

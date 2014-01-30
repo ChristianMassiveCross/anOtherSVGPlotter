@@ -4,7 +4,15 @@ import svg.element.attribute.property.Color;
 import svg.element.attribute.property.Unit;
 
 public class StyleAttribute extends AttributeCollector{
-	
+	@Override
+	public String toString (){
+		String pattern = "style='%s'";
+		String formatedString = String.format(
+				pattern,
+				super.toString()
+		);
+		return formatedString;
+	}
 	public void fill(Color color) {
 		String pattern = "fill:%s; ";
 		String formatedString = String.format(pattern, color.toString());

@@ -25,7 +25,7 @@ public class LineTest {
 		styleAttributes.stroke(new Color(4,55,255));
 		line.setStyle(styleAttributes);
 		
-		assertEquals("<line x1='1' y1='2' x2='3' y2='4'  " +
+		assertEquals("<line x1='1' y1='2' x2='3' y2='4' " +
 					 "style='stroke-width:1.2px; stroke:rgb(4,55,255); '/>",
 					 line.getAsString()
 		);
@@ -34,7 +34,7 @@ public class LineTest {
 	public void LineWithoutParameters() {
 		Line line = new Line();
 		line.getAsString();
-		assertEquals("<line  style=''/>", line.getAsString() );
+		assertEquals("<line />", line.getAsString() );
 	}
 
 }

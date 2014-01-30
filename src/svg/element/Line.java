@@ -13,7 +13,7 @@ public class Line implements GraficElement{
 	
 	@Override
 	public String getAsString() {
-		String pattern = "<line %s style='%s'/>";
+		String pattern = "<line %s%s/>";
 		String startAndEndPoint = this.getPosition();
 		String style = this.getStyle();
 		String pathAsString = String.format(pattern, startAndEndPoint, style);
