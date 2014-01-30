@@ -4,7 +4,7 @@ import java.awt.Point;
 
 import svg.element.attribute.property.Unit;
 
-public class PositionAttributes extends AttributeCollector {
+public class PositionAttribute extends AttributeCollector {
 	
 	public void setPosition(Point position) {
 		Unit unit = new Unit();

@@ -3,7 +3,7 @@ package svg.element.attribute;
 import svg.element.attribute.property.Color;
 import svg.element.attribute.property.Unit;
 
-public class StyleAttributes extends AttributeCollector{
+public class StyleAttribute extends AttributeCollector{
 	
 	public void fill(Color color) {
 		String pattern = "fill:%s; ";

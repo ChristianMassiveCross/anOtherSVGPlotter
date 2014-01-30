@@ -1,7 +1,7 @@
 package svg.element;
 
-import svg.element.attribute.PathAttributes;
-import svg.element.attribute.StyleAttributes;
+import svg.element.attribute.PathAttribute;
+import svg.element.attribute.StyleAttribute;
 
 public class Path implements GraficElement {
 	private String pathAttributes = "";
@@ -20,7 +20,7 @@ public class Path implements GraficElement {
 		return pathAttributes;
 	}
 
-	public void setPathAtributes(PathAttributes pathAtributes) {
+	public void setPathAtributes(PathAttribute pathAtributes) {
 		this.pathAttributes = pathAtributes.toString();
 	}
 
@@ -28,7 +28,7 @@ public class Path implements GraficElement {
 		return style;
 	}
 
-	public void setStyle(StyleAttributes styleAttributes) {
+	public void setStyle(StyleAttribute styleAttributes) {
 		this.style = styleAttributes.toString();
 	}
 

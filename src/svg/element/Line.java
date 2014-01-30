@@ -2,8 +2,8 @@ package svg.element;
 
 import java.awt.Point;
 
-import svg.element.attribute.LineAttributes;
-import svg.element.attribute.StyleAttributes;
+import svg.element.attribute.LineAttribute;
+import svg.element.attribute.StyleAttribute;
 
 public class Line implements GraficElement{
 	Point startPoint = new Point();
@@ -30,7 +30,7 @@ public class Line implements GraficElement{
 		return returnValue;
 	}
 
-	public void setPosition(LineAttributes lineAtributes) {
+	public void setPosition(LineAttribute lineAtributes) {
 		this.position = lineAtributes.toString();
 	}
 
@@ -44,7 +44,7 @@ public class Line implements GraficElement{
 		return returnValue;
 	}
 
-	public void setStyle(StyleAttributes styleAttributes) {
+	public void setStyle(StyleAttribute styleAttributes) {
 		this.style = styleAttributes.toString();
 	}
 

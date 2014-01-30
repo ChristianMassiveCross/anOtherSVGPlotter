@@ -2,7 +2,7 @@ package svg.element.attribute;
 
 import java.awt.Point;
 
-public class PathAttributes extends AttributeCollector{
+public class PathAttribute extends AttributeCollector{
 
 	public void moveTo(Point position) {
 		String pattern = "M %d %d ";

@@ -6,8 +6,8 @@ import java.awt.Point;
 
 import org.junit.Test;
 
-import svg.element.attribute.LineAttributes;
-import svg.element.attribute.StyleAttributes;
+import svg.element.attribute.LineAttribute;
+import svg.element.attribute.StyleAttribute;
 import svg.element.attribute.property.Color;
 
 public class LineTest {
@@ -16,11 +16,11 @@ public class LineTest {
 	public void normalLine() {
 		Line line = new Line();
 		
-		LineAttributes lineAttributes = new LineAttributes();
+		LineAttribute lineAttributes = new LineAttribute();
 		lineAttributes.setStartAndEndPoint(new Point (1,2), new Point(3,4));
 		line.setPosition(lineAttributes);
 		
-		StyleAttributes styleAttributes = new StyleAttributes();
+		StyleAttribute styleAttributes = new StyleAttribute();
 		styleAttributes.strokeWidth(1.2f);
 		styleAttributes.stroke(new Color(4,55,255));
 		line.setStyle(styleAttributes);

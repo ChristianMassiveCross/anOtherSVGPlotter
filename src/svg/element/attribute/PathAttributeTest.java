@@ -6,23 +6,23 @@ import java.awt.Point;
 
 import org.junit.Test;
 
-public class PathAttributesTest {
+public class PathAttributeTest {
 
 	@Test
 	public void moveTo() {
-		PathAttributes PA = new PathAttributes();
+		PathAttribute PA = new PathAttribute();
 		PA.moveTo(new Point(100,200));
 		assertEquals("M 100 200 ", PA.toString());
 	}
 	@Test
 	public void lineTo() {
-		PathAttributes PA = new PathAttributes();
+		PathAttribute PA = new PathAttribute();
 		PA.lineTo(new Point(333,666));
 		assertEquals("L 333 666 ", PA.toString());
 	}
 	@Test
 	public void CurveTo() {
-		PathAttributes PA = new PathAttributes();
+		PathAttribute PA = new PathAttribute();
 		PA.curveTo(
 				new Point(1,2),
 				new Point(3,4),
@@ -32,7 +32,7 @@ public class PathAttributesTest {
 	}
 	@Test
 	public void smoothCurveTo() {
-		PathAttributes PA = new PathAttributes();
+		PathAttribute PA = new PathAttribute();
 		PA.smoothCurveTo(
 				new Point(11,22),
 				new Point(33,44)
@@ -41,14 +41,14 @@ public class PathAttributesTest {
 	}
 	@Test
 	public void closePath() {
-		PathAttributes PA = new PathAttributes();
+		PathAttribute PA = new PathAttribute();
 		PA.closePath();
 		assertEquals("Z ", PA.toString());
 	}
 	
 	@Test
 	public void concatPath() {
-		PathAttributes PA = new PathAttributes();
+		PathAttribute PA = new PathAttribute();
 		PA.moveTo(new Point(1,2));
 		PA.lineTo(new Point (100,200));
 		PA.closePath();

@@ -8,11 +8,11 @@ import org.junit.Test;
 
 import svg.element.attribute.property.Unit;
 
-public class PositionAttributesTest {
+public class PositionAttributeTest {
 
 	@Test
 	public void TestWithSpecialUnit() {
-		PositionAttributes positionAttributes = new PositionAttributes();
+		PositionAttribute positionAttributes = new PositionAttribute();
 		Point position = new Point(1,2);
 		Unit unit = new Unit("ptx");
 		positionAttributes.setPosition(position, unit);
@@ -21,7 +21,7 @@ public class PositionAttributesTest {
 
 	@Test
 	public void TestWithStandardUnit() {
-		PositionAttributes positionAttributes = new PositionAttributes();
+		PositionAttribute positionAttributes = new PositionAttribute();
 		Point position = new Point(1,2);
 		Unit unit = new Unit();
 		positionAttributes.setPosition(position, unit);

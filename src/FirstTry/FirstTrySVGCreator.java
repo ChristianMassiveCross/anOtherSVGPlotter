@@ -2,14 +2,14 @@ package FirstTry;
 import java.awt.Point;
 
 import svg.element.Line;
-import svg.element.attribute.StyleAttributes;
+import svg.element.attribute.StyleAttribute;
 
 import SVG.CanvasSpliter;
 import SVG.Creator;
 public class FirstTrySVGCreator extends Creator{
 	int WidthInPixel;
 	int HeightInPixel;
-	StyleAttributes attributes = null;
+	StyleAttribute attributes = null;
 	int PositionShift = 0;
 	private int fieldFactor = 4;
 	boolean GoUp = true;
@@ -77,7 +77,7 @@ public class FirstTrySVGCreator extends Creator{
 	}
 	
 	private void setBaseAttributes (){
-		this.attributes = new StyleAttributes();
+		this.attributes = new StyleAttribute();
 		this.attributes.setStrokeWidth("0.5");
 	}
 }

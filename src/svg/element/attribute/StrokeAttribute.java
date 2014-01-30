@@ -1,6 +1,6 @@
 package svg.element.attribute;
 
-public class StrokeAttributes extends AttributeCollector {
+public class StrokeAttribute extends AttributeCollector {
 	
 	public void strokeLinecap() {
 		this.strokeLinecap("butt");

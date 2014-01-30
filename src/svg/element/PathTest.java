@@ -6,8 +6,8 @@ import java.awt.Point;
 
 import org.junit.Test;
 
-import svg.element.attribute.PathAttributes;
-import svg.element.attribute.StyleAttributes;
+import svg.element.attribute.PathAttribute;
+import svg.element.attribute.StyleAttribute;
 import svg.element.attribute.property.Color;
 
 public class PathTest {
@@ -23,12 +23,12 @@ public class PathTest {
 	public void pathWithRealData() {
 		Path path = new Path();
 		
-		PathAttributes pathAttributes = new PathAttributes();
+		PathAttribute pathAttributes = new PathAttribute();
 		pathAttributes.moveTo(new Point(12,10));
 		pathAttributes.lineTo(new Point(100,200));
 		path.setPathAtributes(pathAttributes);
 		
-		StyleAttributes styleAttributes = new StyleAttributes();
+		StyleAttribute styleAttributes = new StyleAttribute();
 		styleAttributes.fill(new Color(123));
 		styleAttributes.stroke(new Color());
 		path.setStyle(styleAttributes);

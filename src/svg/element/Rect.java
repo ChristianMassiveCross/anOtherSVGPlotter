@@ -2,13 +2,13 @@ package svg.element;
 
 import java.awt.Point;
 
-import svg.element.attribute.StyleAttributes;
+import svg.element.attribute.StyleAttribute;
 import svg.element.attribute.property.Color;
 
 import SVG.KeyValuePixel;
 
 public class Rect implements GraficElement {
-	private StyleAttributes style;
+	private StyleAttribute style;
 	private Point size = null;
 	Point position;
 	public Rect(Point position, Point size) {
@@ -61,7 +61,7 @@ public class Rect implements GraficElement {
 	}
 
 	public void setStyle(Color Fillcolors, Color StrokeColor) {
-		StyleAttributes style = new StyleAttributes();
+		StyleAttribute style = new StyleAttribute();
 		style.setFillColor(Fillcolors);
 		style.setStokeColor(StrokeColor);
 		this.style = style;
