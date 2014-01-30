@@ -17,19 +17,19 @@ public class Rect implements GraficElement {
 
 	@Override
 	public String getAsString() {
-		String path = this.getPositionAndSize();
-		String style = this.getStyle();
-		String pattern = "<rect %s %s/>";
-		String pathAsString = String.format(pattern, path, style);
+		String pattern = "<rect %s />";
+		String attributes = this.getAttributes();
+		String pathAsString = String.format(pattern, attributes);
 		return pathAsString;
 	}
 
-	private String getPositionAndSize() {
-		String pattern =  "%s%s";
+	private String getAttributes() {
+		String pattern =  "%s %s %s";
 		String formatedString = String.format(
 				pattern,
 				this.getPosition(),
-				this.getArea()
+				this.getArea(),
+				this.getStyle()
 		);
 		return formatedString;
 	}

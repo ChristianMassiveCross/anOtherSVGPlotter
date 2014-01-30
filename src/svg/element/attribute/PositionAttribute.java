@@ -12,7 +12,7 @@ public class PositionAttribute extends AttributeCollector {
 	}
 	
 	public void setPosition(Point position, Unit unit) {
-		String pattern = "x='%s' y='%s' ";
+		String pattern = "x='%s' y='%s'";
 		String formatedString = String.format(
 				pattern, 
 				unit.getWithUnit(position.x), 

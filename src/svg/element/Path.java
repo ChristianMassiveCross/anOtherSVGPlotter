@@ -9,13 +9,22 @@ public class Path implements GraficElement {
 
 	@Override
 	public String getAsString() {
-		String pattern = "<path d='%s' %s/>";
-		String path = this.getPathAttributes();
-		String style = this.getStyle();
-		String pathAsString = String.format(pattern, path, style);
+		String pattern = "<path %s />";
+		String attributes = this.getAttributes();
+		String pathAsString = String.format(pattern, attributes);
 		return pathAsString;
 	}
-
+	
+	private String getAttributes() {
+		String pattern =  "%s %s";
+		String formatedString = String.format(
+				pattern,
+				this.getPathAttributes(),
+				this.getStyle()
+		);
+		return formatedString;
+	}
+	
 	private String getPathAttributes() {
 		return pathAttributes;
 	}

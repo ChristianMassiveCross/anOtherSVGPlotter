@@ -3,7 +3,17 @@ package svg.element.attribute;
 import java.awt.Point;
 
 public class PathAttribute extends AttributeCollector{
-
+	
+	@Override
+	public String toString (){
+		String pattern = "d='%s'";
+		String formatedString = String.format(
+				pattern,
+				super.toString()
+		);
+		return formatedString;
+	}
+	
 	public void moveTo(Point position) {
 		String pattern = "M %d %d ";
 		String formatedString = String.format(

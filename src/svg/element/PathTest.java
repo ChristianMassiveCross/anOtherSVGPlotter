@@ -16,7 +16,7 @@ public class PathTest {
 	public void pathWithoutAnySettings() {
 		Path path = new Path();
 		String result = path.getAsString();
-		assertEquals("<path d='' />", result);
+		assertEquals("<path   />", result);
 	}
 
 	@Test
@@ -33,6 +33,6 @@ public class PathTest {
 		styleAttributes.stroke(new Color());
 		path.setStyle(styleAttributes);
 		String result = path.getAsString();
-		assertEquals("<path d='M 12 10 L 100 200 ' style='fill:rgb(123,123,123); stroke:none; '/>", result);
+		assertEquals("<path d='M 12 10 L 100 200 ' style='fill:rgb(123,123,123); stroke:none; ' />", result);
 	}
 }

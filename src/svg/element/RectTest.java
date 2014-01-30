@@ -22,7 +22,9 @@ public class RectTest {
 		StyleAttribute style = new StyleAttribute();
 		style.fill(new Color(6));
 		Rect rect = new Rect(position, area, style);
-		assertEquals("<rect x='23px' y='24px' width='100px' height='200px' style='fill:rgb(6,6,6); '/>", rect.getAsString());
+		assertEquals("<rect x='23px' y='24px' "
+				+ "width='100px' height='200px' "
+				+ "style='fill:rgb(6,6,6); ' />", rect.getAsString());
 	}
 
 }

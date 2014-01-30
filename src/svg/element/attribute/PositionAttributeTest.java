@@ -16,7 +16,7 @@ public class PositionAttributeTest {
 		Point position = new Point(1,2);
 		Unit unit = new Unit("ptx");
 		positionAttributes.setPosition(position, unit);
-		assertEquals("x='1ptx' y='2ptx' ", positionAttributes.toString());
+		assertEquals("x='1ptx' y='2ptx'", positionAttributes.toString());
 	}
 
 	@Test
@@ -25,6 +25,6 @@ public class PositionAttributeTest {
 		Point position = new Point(1,2);
 		Unit unit = new Unit();
 		positionAttributes.setPosition(position, unit);
-		assertEquals("x='1px' y='2px' ", positionAttributes.toString());
+		assertEquals("x='1px' y='2px'", positionAttributes.toString());
 	}
 }

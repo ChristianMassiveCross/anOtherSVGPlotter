@@ -13,11 +13,17 @@ public class Line implements GraficElement{
 	
 	@Override
 	public String getAsString() {
-		String pattern = "<line %s%s/>";
-		String startAndEndPoint = this.getPosition();
-		String style = this.getStyle();
-		String pathAsString = String.format(pattern, startAndEndPoint, style);
-		return pathAsString;
+		String pattern = "<line %s />";
+		String attribute = this.getAttributes();
+		String lineElement = String.format(pattern, attribute);
+		return lineElement;
+	}
+
+	private String getAttributes() {
+		String pattern = "%s %s";
+		String formatedString = String.format(pattern, this.getPosition(),
+				this.getStyle());
+		return formatedString;
 	}
 	
 	private String getPosition() {
