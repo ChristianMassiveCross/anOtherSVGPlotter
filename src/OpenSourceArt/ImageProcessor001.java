@@ -1,9 +1,8 @@
 package OpenSourceArt;
 
-import image.PNG;
-import image.Pixel;
-import image.RGBGreyPixel;
-import image.RGBPixel;
+import image.png.PNG;
+import image.raster.ImageContainer;
+import image.raster.attribute.Pixel;
 
 import java.awt.Point;
 import java.util.Iterator;
@@ -31,18 +30,16 @@ public class ImageProcessor001 implements ImageProcessor {
 	}
 
 	@Override
-	public Vector<String> process(PNG png) {
+	public Vector<String> process(ImageContainer imageContainer, int tileSize) {
+		Pixel [][] pixelMatrix = imageContainer.getPixelMatrix();
 		Vector<String> outPutMatrix = new Vector<String>();
-		for (int y = 0; y < png.getHeight(); y++) {
-			int x = 0;
-			for (Iterator<Pixel> pixelIterator = png.getNextLine()
-					.iterator(); pixelIterator.hasNext();) {// TODO get next
-															// line == get next
-															// pixel
-				Pixel i = pixelIterator.next();
-				outPutMatrix.add(
-						this.createSVGElement(new Point(x*100, y*100), this.pixelToColor(i) ) );
-				x++;
+		for (int y = 0; y < pixelMatrix.length; y++) {
+			for (int x = 0; x < pixelMatrix[y].length; x++) {
+				outPutMatrix.add( 
+						this.createSVGElement(new Point(x*tileSize, y*tileSize),
+								this.pixelToColor(pixelMatrix[x][y])
+						)
+				);
 			}
 		}
 		return outPutMatrix;
@@ -83,4 +80,5 @@ public class ImageProcessor001 implements ImageProcessor {
 	private void setTileHeight(int tileHeight) {
 		this.tileHeight = tileHeight;
 	}
+
 }

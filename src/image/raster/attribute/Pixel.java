@@ -1,12 +1,10 @@
-package image;
+package image.raster.attribute;
 
 
 public interface Pixel {
-
 	int red();
 	int green();
 	int blue();
 	int alfa();
-	Pixel getColor();
-
+	int grey();
 }

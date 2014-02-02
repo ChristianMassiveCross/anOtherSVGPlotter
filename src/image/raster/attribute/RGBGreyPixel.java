@@ -1,11 +1,9 @@
-package image;
-
+package image.raster.attribute;
 
 public class RGBGreyPixel extends RGBPixel {
 	private float factorRed;
 	private float factorGreen;
 	private float factorBlue;
-
 
 	public RGBGreyPixel(int AllColorChannels) {
 		super(AllColorChannels);
@@ -51,6 +49,7 @@ public class RGBGreyPixel extends RGBPixel {
 		}
 	}
 
+	@Override
 	public int grey() {
 		float red = this.red();
 		float green = this.green();
@@ -91,6 +90,5 @@ public class RGBGreyPixel extends RGBPixel {
 	private void setFactorBlue(float factorBlue) {
 		this.factorBlue = factorBlue;
 	}
-
 
 }

@@ -1,4 +1,8 @@
-package image;
+package image.png;
+
+import image.Pixel;
+import image.RGBGreyPixel;
+import image.RGBPixel;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -7,20 +11,21 @@ import java.util.Vector;
 
 import javax.imageio.ImageIO;
 
-public class PNG {
+public class PNG { // todo name doof
 	private BufferedImage imageObject;
 	private int height;
 	private int width;
 	private int currentLine = 0;
 	private String schemaName;
 
+	// picture opener
 	public PNG(String FileName) throws IOException {
 		File FileHandler = new File(FileName);
 		this.setImageObject(ImageIO.read(FileHandler));
 		this.setHeight(this.getImageObject().getHeight());
 		this.setWidth(this.getImageObject().getWidth());
 	}
-
+	// liner
 	public Vector<Pixel> getNextLine() {
 		Vector<Pixel> line = new Vector<Pixel>();
 		for (int x = 0; x < this.getWidth(); x++) {

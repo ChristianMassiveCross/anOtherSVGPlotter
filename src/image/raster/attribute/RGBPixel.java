@@ -1,12 +1,10 @@
-package image;
-
+package image.raster.attribute;
 
 public class RGBPixel implements Pixel {
 	private int red;
 	private int green;
 	private int blue;
 	private int alfa;
-	private Pixel color;
 
 	public RGBPixel(int AllColorChannels) {
 		this.initColor(
@@ -64,8 +62,8 @@ public class RGBPixel implements Pixel {
 	}
 
 	private void setBlue(int blue) {
-		this.blue = blue;	
-		}
+		this.blue = blue;
+	}
 
 	public int alfa() {
 		return alfa;
@@ -75,11 +73,9 @@ public class RGBPixel implements Pixel {
 		this.alfa = alfa;
 	}
 
-	public Pixel getColor() {
-		return color;
+	@Override
+	public int grey() {
+		return 0;
 	}
 
-	public void setColor(Pixel color) {
-		this.color = color;
-	}
 }
