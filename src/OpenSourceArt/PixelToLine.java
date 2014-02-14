@@ -3,6 +3,7 @@ package OpenSourceArt;
 import image.raster.ImageContainer;
 import image.raster.RGBInterpreter;
 
+import java.awt.image.TileObserver;
 import java.io.IOException;
 import java.util.Vector;
 
@@ -13,12 +14,13 @@ public class PixelToLine {
 	private ImageContainer imageContainer;
 	private Vector<String> svgElements;
 	private ImageProcessor imageProcessor;
-	private int tileSize = 10;
+	private int tileSize = 100;
 
 	public static void main(String[] args) {
-		ImageProcessor iP = new ImageProcessor001();
+		int TileSize = 100;
+		ImageProcessor iP = new ImageProcessor002(TileSize);
 		PixelToLine ptl = new PixelToLine(iP);
-		ptl.setTileSize(20);
+		ptl.setTileSize(TileSize);
 		ptl.go("foto.png");
 	}
 
@@ -49,7 +51,7 @@ public class PixelToLine {
 	private void writeSVG() {
 		Creator svg = new Creator(this.imageContainer.getWidth()*this.getTileSize(),this.imageContainer.getHeight()*this.getTileSize());
 		svg.setSvgElements(this.getSvgElements());
-		Writer svgWriter = new Writer("newOutput.svg");
+		Writer svgWriter = new Writer("newOutput2.svg");
 		svgWriter.write(svg.getSVGAsString());
 	}
 
