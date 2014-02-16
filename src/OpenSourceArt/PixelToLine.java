@@ -21,7 +21,7 @@ public class PixelToLine {
 		ImageProcessor iP = new ImageProcessor002(TileSize);
 		PixelToLine ptl = new PixelToLine(iP);
 		ptl.setTileSize(TileSize);
-		ptl.go("foto.png");
+		ptl.go("3to3.png");
 	}
 
 	public PixelToLine(ImageProcessor imageProcessor) {
