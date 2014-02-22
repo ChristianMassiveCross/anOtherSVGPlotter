@@ -24,7 +24,7 @@ public class Rect implements GraficElement {
 	}
 
 	private String getAttributes() {
-		String pattern =  "%s %s %s";
+		String pattern =  "%s %s %s rx='50' ry='50'";
 		String formatedString = String.format(
 				pattern,
 				this.getPosition(),
