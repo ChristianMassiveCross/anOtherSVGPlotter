@@ -18,9 +18,28 @@ public class SVGZickZackSubPixel {
 	public String get(Point startPoint, Point endPoint) {
 		this.init(startPoint, endPoint);
 		this.createStartSubPixel();
+		this.createMiddleSubPixel();
 		this.createEndSubPixel();
 
 		return this.buildSVGPath();
+	}
+
+	private void createMiddleSubPixel() {
+		int MiddleSectionAmount = getZickZackAmount()*5; // (middle) upper (middle) lower (middle)
+		int dividerLenght = width  / MiddleSectionAmount;
+		boolean isNextUpperPoint = true;
+		/*soo einfach ista das ejtzt nicht*/
+		for (int i = 1; i < MiddleSectionAmount; i+=2) {
+			System.out.println(i*dividerLenght);
+			if ( isNextUpperPoint){
+				System.out.println("y: up");
+				isNextUpperPoint = false;
+			}else{
+				System.out.println("y: down");
+				isNextUpperPoint = true;
+			}
+				
+		}
 	}
 
 	private String buildSVGPath() {

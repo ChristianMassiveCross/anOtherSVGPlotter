@@ -18,10 +18,10 @@ public class PixelToLine {
 
 	public static void main(String[] args) {
 		int TileSize = 100;
-		ImageProcessor iP = new ImageProcessor002(TileSize);
+		ImageProcessor iP = new ImageProcessor003_Circles(TileSize);
 		PixelToLine ptl = new PixelToLine(iP);
 		ptl.setTileSize(TileSize);
-		ptl.go("3to3.png");
+		ptl.go("foto.png");
 	}
 
 	public PixelToLine(ImageProcessor imageProcessor) {
@@ -45,13 +45,16 @@ public class PixelToLine {
 	}
 
 	private void process() {
-		setSVGElments(this.getImageProcessor().process(this.getImageContainer(),this.getTileSize()));
+		Vector<String> contend;
+		contend = this.getImageProcessor().process(this.getImageContainer(),this.getTileSize());
+		setSVGElments(contend);
 	}
+
 
 	private void writeSVG() {
 		Creator svg = new Creator(this.imageContainer.getWidth()*this.getTileSize(),this.imageContainer.getHeight()*this.getTileSize());
 		svg.setSvgElements(this.getSvgElements());
-		Writer svgWriter = new Writer("newOutput2.svg");
+		Writer svgWriter = new Writer("CirclesFoto.svg");
 		svgWriter.write(svg.getSVGAsString());
 	}
 
