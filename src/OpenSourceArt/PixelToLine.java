@@ -14,6 +14,7 @@ public class PixelToLine {
 	private ImageContainer imageContainer;
 	private Vector<String> svgElements;
 	private ImageProcessor imageProcessor;
+<<<<<<< HEAD
 	private int tileSize = 100;
 
 	public static void main(String[] args) {
@@ -22,9 +23,22 @@ public class PixelToLine {
 		PixelToLine ptl = new PixelToLine(iP);
 		ptl.setTileSize(TileSize);
 		ptl.go("3to3.png");
+=======
+	private int width;
+	private int height;
+	public static void main(String[] args) {
+		
+		int tileSizeX = 100;
+		int tileSizeY = 100;
+		ImageProcessor iP = new ImageProcessor001(tileSizeX,tileSizeY);
+		PixelToLine ptl = new PixelToLine(iP,tileSizeX,tileSizeY);
+		ptl.go("foto.png");
+>>>>>>> 69857b950df6725c99160ec014ddfd5d54034ec9
 	}
 
-	public PixelToLine(ImageProcessor imageProcessor) {
+	public PixelToLine(ImageProcessor imageProcessor,int width, int height) {
+		this.setWidth(width);
+		this.setHeight(height);
 		this.setImageProcessor(imageProcessor);
 	}
 
@@ -45,11 +59,11 @@ public class PixelToLine {
 	}
 
 	private void process() {
-		setSVGElments(this.getImageProcessor().process(this.getImageContainer(),this.getTileSize()));
+		setSVGElments(this.getImageProcessor().process(this.getImageContainer()));
 	}
 
 	private void writeSVG() {
-		Creator svg = new Creator(this.imageContainer.getWidth()*this.getTileSize(),this.imageContainer.getHeight()*this.getTileSize());
+		Creator svg = new Creator(this.imageContainer.getWidth()*this.getWidth(),this.imageContainer.getHeight()*this.getHeight());
 		svg.setSvgElements(this.getSvgElements());
 		Writer svgWriter = new Writer("newOutput2.svg");
 		svgWriter.write(svg.getSVGAsString());
@@ -79,11 +93,20 @@ public class PixelToLine {
 		this.imageProcessor = imageProcessor;
 	}
 
-	private int getTileSize() {
-		return tileSize;
+	private int getWidth() {
+		return width;
 	}
 
-	private void setTileSize(int tileSize) {
-		this.tileSize = tileSize;
+	private void setWidth(int width) {
+		this.width = width;
 	}
+
+	private int getHeight() {
+		return height;
+	}
+
+	private void setHeight(int height) {
+		this.height = height;
+	}
+
 }
